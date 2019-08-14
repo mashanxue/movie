@@ -43,5 +43,14 @@
            insert into customer (customerName,customerPassword,phone) values (#{customerName},#{customerPassword},#{phone})
     </insert>
 
+    <!--查找用户是否已经注册-->
+    <select id="checkingCount" resultType="Integer">
+        SELECT COUNT(*) FROM customer WHERE phone = #{phone}
+    </select>
+
+    <!--登录-->
+    <select id="login" resultType="com.movie.entity.Customer">
+       select * from customer where customerName=#{customerName} and customerPassword=#{customerPassword}
+    </select>
 
 </mapper>

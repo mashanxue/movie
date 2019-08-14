@@ -16,5 +16,8 @@ public interface YwxMapper {
     public Movies LookOne(int moviesId);
     //注册
     public int zc(Customer customer);
-
+    //查找用户是否已经注册
+    public int checkingCount(String phone);
+    //登录
+    public Customer login(Customer customer);
 }

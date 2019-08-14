@@ -33,5 +33,15 @@ public class YwxServiceImpl implements YwxService {
         return ywxMapper.zc(customer);
     }
 
+    //判断用户是否已经注册
+    public int checkingCount(String phone) {
+        return ywxMapper.checkingCount(phone);
+    }
+
+    //登录
+    public Customer login(Customer customer) {
+        return ywxMapper.login(customer);
+    }
+
 
 }

@@ -30,7 +30,6 @@ public class YwxController {
     @RequestMapping("Look")
     public ModelAndView lookdall() {
         ModelAndView model=new ModelAndView();
-        System.out.println("kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk");
         model.addObject("scc",ycfService.LookAll());
         model.setViewName("look");
         return model;
@@ -53,7 +52,7 @@ public class YwxController {
             String verifyCode = String.valueOf(new Random().nextInt(899999) + 100000);
             //发送短信
             ZhenziSmsClient client = new ZhenziSmsClient("https://sms_developer.zhenzikj.com", "102119", "4adf806b-4efd-4959-8894-b46be4ddb9af");
-            String result = client.send(phone, "您的验证码为:" + verifyCode + "，该码有效期为5分钟，该码只能使用一次！药必达");
+            String result = client.send(phone, "您的验证码为:" + verifyCode + "，该码有效期为5分钟，该码只能使用一次！9567电影网");
             System.out.println(phone + "   " + verifyCode + "    " + result);
             json = JSONObject.parseObject(result);
             if (json.getIntValue("code") != 0) {
@@ -145,7 +144,7 @@ public class YwxController {
         customer1.setCustomerPassword(customerPassword);
         Customer customer2 = ycfService.login(customer1);
         if (customer2 != null) {
-           this.lookdall();
+           return lookdall();
         } else {
             request.setAttribute("errow", "用户名或密码错误请重新登录");
             mvAndView.setViewName("login");
