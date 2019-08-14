@@ -8,7 +8,7 @@
 <head>
 
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title></title>
+  <title>管理员界面</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="keywords" content="">
@@ -25,7 +25,7 @@
 <body>
 <div class="header" >
   <div class="main">
-    <a href="managerindex.jsp" style="margin-left: 30px;line-height: 65px; color: white;font-size: 18px;">通用的管理系统后台</a>
+    <a href="managerindex.jsp" style="margin-left: 30px;line-height: 65px; color: white;font-size: 18px;">电影选票管理系统后台</a>
     <div class="nav">
     
     </div>
@@ -49,8 +49,7 @@
 
 	<div class="main fly-user-main layui-clear">
 		<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">
-			<li class="layui-nav-item layui-this" ><a href="managerindex.jsp"> <i
-					class="layui-icon">&#xe609;</i> 首页 </a></li>
+
 					
 								<li class="layui-nav-item "><a href="role.jsp" target="right"> <i
 					class="layui-icon">&#xe612;</i>影院管理</a></li>
@@ -58,8 +57,7 @@
 					class="layui-icon">&#xe612;</i> 电影管理</a></li>
 						<li class="layui-nav-item"><a href="newsType.jsp" target="right"> <i
 					class="layui-icon">&#xe611;</i>场厅场次管理</a></li>
-				<li class="layui-nav-item "><a href="404.jsp" target="right"> <i
-					class="layui-icon">&#xe61a;</i> 404错误页面 </a></li>
+
 		</ul>
 
 		<div class="site-tree-mobile layui-hide">
@@ -72,7 +70,7 @@
 				
 				<div class="layui-tab-content" style="padding: 20px;padding-top: 0px;">
 					
-    					<iframe src="newsType.jsp" width="88%" style="border: none;" height="800" border="none" name="right"></iframe>
+    					<iframe src="index.jsp" width="88%" style="border: none;" height="800" border="none" name="right"></iframe>
 					</div>					
 				</div>
 			</div>
