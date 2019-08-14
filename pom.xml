@@ -43,6 +43,20 @@
             <artifactId>jstl</artifactId>
         </dependency>
 
+        <!--阿里云上的ajax-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+        <!--榛子云短信验证码-->
+        <dependency>
+            <groupId>com.zhenzikj</groupId>
+            <artifactId>zhenzisms</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
         <!-- Spring-Mybatis -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
