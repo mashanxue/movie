@@ -19,5 +19,6 @@
         <p>手机号:<input type="text" name="phone"></p>
         <p><input type="submit" name="注册"></p>
     </form>
+
 </body>
 </html>
