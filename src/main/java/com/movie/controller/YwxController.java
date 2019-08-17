@@ -23,6 +23,7 @@ import java.util.Random;
 @Controller
 public class YwxController {
 
+
     @Autowired
     private YwxService ycfService;
 

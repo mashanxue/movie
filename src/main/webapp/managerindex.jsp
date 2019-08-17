@@ -27,7 +27,8 @@
   <div class="main">
     <a href="managerindex.jsp" style="margin-left: 30px;line-height: 65px; color: white;font-size: 18px;">电影选票管理系统后台</a>
     <div class="nav">
-    
+
+
     </div>
     
     <div class="nav-user">      

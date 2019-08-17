@@ -46,10 +46,7 @@ public class slcontroller {
         return "managerindex";
     }
 
-    @RequestMapping("login")
-    public void login(Admin admin){
-        System.out.println(adminservice.adminlogin(admin));
-    }
+
     @RequestMapping("selectallmovies")
     public void selectallmovies(){
        adminservice.selectallmovie();

@@ -33,6 +33,7 @@
 <script type="text/javascript">
 
 $("#button").click(
+
       function () {
           if($("input[name='adminname']").val()=="" || $("input[name='adminname']").val()==null) {
 
