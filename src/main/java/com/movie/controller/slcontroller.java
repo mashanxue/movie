@@ -37,7 +37,7 @@ public class slcontroller {
     try {
         subject.login(token);
     }catch (UnknownAccountException e){
-        model.addObject("该用户并不存在");
+
     }catch (IncorrectCredentialsException e){
         System.out.println("mimacuowu");
     }
