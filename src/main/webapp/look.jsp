@@ -24,7 +24,7 @@
 <p id="xx"><span><a href="zc.jsp">注册</a></span><span><a href="login.jsp">登录</a></span></p>
     <c:forEach items="${scc}" var="student" varStatus="index">
         <div style="display: inline-block;">
-            <p><a href="xiangqing?moviesId=${student.moviesId}"><img src="/static/imgs/${student.moviePname} " height="230px" width="262.1px" ></a></p>
+            <p><a href="xiangqing?moviesId=${index.count}"><img src="/static/imgs/${student.moviePname} " height="230px" width="262.1px" ></a></p>
             <p>片名:${student.movieName}&nbsp;&nbsp;&nbsp;&nbsp;导演: ${student.movieActor}</p>
             <p>评分:${student.movieScore}&nbsp;&nbsp;&nbsp;&nbsp;地区:${student.movieAddress}</p>
             <p>时长:${student.movieTime}&nbsp;&nbsp;&nbsp;&nbsp;类型:${student.movietype.movieTpyeName}</p>

@@ -7,7 +7,7 @@
     <select id="adminlogin" resultType="string" parameterType="Admin">
         select adminpassword from admin where adminname=#{adminname}
     </select>
-   <select id="selectallmovie" resultType="com.movie.entity.Movies" >
+   <select id="selectallmovie" resultType="Movies" >
     SELECT * FROM movies
 </select>
     <select id="findallyingyuan" resultType="Yingyuan">

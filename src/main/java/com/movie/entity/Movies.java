@@ -1,7 +1,7 @@
 package com.movie.entity;
 
 public class Movies {
-    private Integer moviesId;
+    private int moviesId;
     private String movieName;
     private double moviePrice;
     private String movieAddress;
@@ -13,11 +13,11 @@ public class Movies {
     private String movieActor;
     private Movietype movietype;
 
-    public Integer getMoviesId() {
+    public int getMoviesId() {
         return moviesId;
     }
 
-    public void setMoviesId(Integer moviesId) {
+    public void setMoviesId(int moviesId) {
         this.moviesId = moviesId;
     }
 

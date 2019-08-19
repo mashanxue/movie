@@ -19,8 +19,6 @@ public class Adminserviceimpl implements Adminservice {
     public String adminlogin(Admin admin) {
         return adminMapper.adminlogin(admin);
 
-
-
     }
     public List<Movies> selectallmovie(){
         return adminMapper.selectallmovie();

@@ -75,8 +75,6 @@
                         <input type="text" class="form-control" name="customerPassword" id="passWord" value="">
                     </div>
 
-
-
                     <%--验证码--%>
                     <div class="custom-input" id="verifyCode0" style="margin-top:200px;">
                         <label for="verifyCode">验证码</label>

@@ -15,8 +15,7 @@ public class Admin implements Serializable{
         this.adminpassword = adminpassword;
     }
 
-
-    private Admin() {
+    public Admin() {
         super();
     }
 

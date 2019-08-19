@@ -22,31 +22,29 @@
 <body>
     <div class="container">
         <h1 class="page-header">欢迎登陆9567小组电影后台管理系统</h1>
-        <form action="testlogin"  method="post" class="form-group" >
+        <form action="testlogin"  method="post" class="form-group" onsubmit="click()">
             用户名： <input type="text" name="adminname" class="form-control"><br/>
             密码：<input type="text" name="adminpassword"  class="form-control"><br/>
-            <input type="button" value="提交" class="btn-default"id="button">
-
+            <input type="submit" value="提交" class="btn-default" onclick="click()">
 
         </form>
     </div>
 <script type="text/javascript">
 
-$("#button").click(
 
-      function () {
-          if($("input[name='adminname']").val()=="" || $("input[name='adminname']").val()==null) {
+      var click= function () {
+          if($("input[name='adminname']").val()=="" && $("input[name='adminname']").val()==null) {
 
               $("input[name='adminname']").attr("placeholder","用户名不可为空")
               return false
           }
-          if($("input[name='adminpassword']").val()==null || $("input[name='adminpassword']").val()=="") {
+          if($("input[name='adminpassword']").val()==null && $("input[name='adminpassword']").val()=="") {
 
               $("input[name='adminpassword']").attr("placeholder","密码不可为空")
               return false
           }
-            $("form").submit();
-          })
+          return true
+          }
 
 
 

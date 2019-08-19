@@ -19,7 +19,6 @@ public class slconfig {
             factoryBean.setSecurityManager(securitymanager);
             Map<String,String> filtermap=new LinkedHashMap<>();
               filtermap.put("/managerlogin","anon");
-            filtermap.put("/managerindex","authc");
             /*  filtermap.put("index","perms[user:add]");*/
             factoryBean.setFilterChainDefinitionMap(filtermap);
             factoryBean.setLoginUrl("managerlogin.jsp");
