@@ -16,7 +16,7 @@ public class Admin implements Serializable{
     }
 
 
-    private Admin() {
+    public Admin() {
         super();
     }
 
