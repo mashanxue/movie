@@ -11,6 +11,7 @@
 </head>
 <frameset rows="*" noresize="noresize">
 
+    
     <frameset cols="8%,*" noresize="noresize">
         <frame src="left.jsp" >
         <frame src="right.jsp" name="main">
