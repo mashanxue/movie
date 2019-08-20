@@ -20,6 +20,7 @@ public class slconfig {
             Map<String,String> filtermap=new LinkedHashMap<>();
               filtermap.put("/managerlogin","anon");
             /*  filtermap.put("index","perms[user:add]");*/
+            filtermap.put("/managerindex.jsp","authc");
             factoryBean.setFilterChainDefinitionMap(filtermap);
             factoryBean.setLoginUrl("managerlogin.jsp");
             factoryBean.setUnauthorizedUrl("managerlogin.jsp");

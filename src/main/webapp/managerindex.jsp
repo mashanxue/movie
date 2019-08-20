@@ -51,7 +51,7 @@
 		<ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user">
 
 					
-								<li class="layui-nav-item "><a href="role.jsp" target="right"> <i
+								<li class="layui-nav-item "><a href="findallyingyuan" target="right"> <i
 					class="layui-icon">&#xe612;</i>影院管理</a></li>
 			<li class="layui-nav-item "><a href="user.jsp" target="right"> <i
 					class="layui-icon">&#xe612;</i> 电影管理</a></li>
