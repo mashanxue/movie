@@ -24,7 +24,7 @@
         <h1 class="page-header">欢迎登陆9567小组电影后台管理系统</h1>
         <form action="testlogin"  method="post" class="form-group" >
             用户名： <input type="text" name="adminname" class="form-control"><br/>
-            密码：<input type="text" name="adminpassword"  class="form-control"><br/>
+            密码：<input type="password" name="adminpassword"  class="form-control"><br/>
             <input type="button" value="提交" class="btn-default"id="button">
 
 
