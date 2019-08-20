@@ -20,7 +20,6 @@
     <script src="/webjars/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <%----%>
 </head>
-
 <body style="background-color: #f1f4fd">
 <div class="container" style="margin-left: 300px" >
 <h1 class="page-header">影院管理</h1>

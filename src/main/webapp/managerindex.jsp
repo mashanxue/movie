@@ -23,7 +23,6 @@
 <script src="res/layui/layui.js"></script>
 </head>
 <body>
-
 <div class="header" >
   <div class="main">
     <a href="managerindex.jsp" style="margin-left: 30px;line-height: 65px; color: white;font-size: 18px;">电影选票管理系统后台</a>
@@ -37,11 +36,11 @@
       <a class="avatar" href="managerindex.jsp">
         <img src="res/images/8.jpg">
         <cite style="color: white;">管理员</cite>
-        <i style="color: white;">退出</i>
+		  <a href="managerlogin.jsp"><i style="color: white;">退出</i></a>
       </a>
       <div class="nav">
         <a href="set.html"><i class="iconfont icon-shezhi"></i>设置</a>
-        <a href="login.html"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>退了</a>
+        <a href="managerlogin.jsp"><i class="iconfont icon-tuichu" style="top: 0; font-size: 22px;"></i>退了</a>
       </div>
     </div>
   </div>
@@ -71,7 +70,7 @@
 				
 				<div class="layui-tab-content" style="padding: 20px;padding-top: 0px;">
 					
-    					<iframe src="index.jsp" width="88%" style="border: none;" height="800" border="none" name="right"></iframe>
+    					<iframe src="findallyingyuan" width="88%" style="border: none;" height="800" border="none" name="right"></iframe>
 					</div>					
 				</div>
 			</div>
