@@ -42,6 +42,7 @@ public class slcontroller {
         System.out.println("mimacuowu");
     }
 
+    
 
         return "managerindex";
     }
