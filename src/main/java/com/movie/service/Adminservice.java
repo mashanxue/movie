@@ -7,8 +7,6 @@ import com.movie.entity.Yingyuan;
 import java.util.List;
 
 public interface Adminservice {
-
-
     public String adminlogin (Admin admin);
     public List<Movies> selectallmovie();
 

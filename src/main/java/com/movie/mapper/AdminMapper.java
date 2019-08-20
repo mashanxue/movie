@@ -5,7 +5,6 @@ import com.movie.entity.Movies;
 import com.movie.entity.Yingyuan;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -13,7 +12,7 @@ import java.util.List;
 @Repository
 public interface AdminMapper {
 
-    public String adminlogin(Admin admin);
+    public String adminlogin (Admin admin);
 
     public List<Movies>  selectallmovie();
 

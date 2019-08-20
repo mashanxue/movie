@@ -23,7 +23,6 @@ import java.util.Random;
 @Controller
 public class YwxController {
 
-
     @Autowired
     private YwxService ycfService;
 
@@ -143,6 +142,10 @@ public class YwxController {
         Customer customer1 = new Customer();
         customer1.setCustomerName(customerName);
         customer1.setCustomerPassword(customerPassword);
+        HttpSession session = request.getSession();
+        session.setAttribute("customerName",customerName);
+        Integer customerId = customer1.getCustomerId();
+        session.setAttribute("customerId",customerId);
         Customer customer2 = ycfService.login(customer1);
         if (customer2 != null) {
            return lookdall();
