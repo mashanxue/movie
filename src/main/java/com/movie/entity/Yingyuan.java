@@ -1,43 +1,31 @@
 package com.movie.entity;
 
 public class Yingyuan {
-    private Integer yingyuanid;
+    private Integer yingYuanId;
+    private String yingYuanName;
+    private String yingYuanAddress;
 
-    private String yingyuanname;
-
-    private String yingyuanaddress;
-
-    public Yingyuan(Integer yingyuanid, String yingyuanname, String yingyuanaddress) {
-        this.yingyuanid = yingyuanid;
-        this.yingyuanname = yingyuanname;
-        this.yingyuanaddress = yingyuanaddress;
+    public Integer getYingYuanId() {
+        return yingYuanId;
     }
 
-    public Yingyuan() {
-        super();
+    public void setYingYuanId(Integer yingYuanId) {
+        this.yingYuanId = yingYuanId;
     }
 
-    public Integer getYingyuanid() {
-        return yingyuanid;
+    public String getYingYuanName() {
+        return yingYuanName;
     }
 
-    public void setYingyuanid(Integer yingyuanid) {
-        this.yingyuanid = yingyuanid;
+    public void setYingYuanName(String yingYuanName) {
+        this.yingYuanName = yingYuanName;
     }
 
-    public String getYingyuanname() {
-        return yingyuanname;
+    public String getYingYuanAddress() {
+        return yingYuanAddress;
     }
 
-    public void setYingyuanname(String yingyuanname) {
-        this.yingyuanname = yingyuanname == null ? null : yingyuanname.trim();
-    }
-
-    public String getYingyuanaddress() {
-        return yingyuanaddress;
-    }
-
-    public void setYingyuanaddress(String yingyuanaddress) {
-        this.yingyuanaddress = yingyuanaddress == null ? null : yingyuanaddress.trim();
+    public void setYingYuanAddress(String yingYuanAddress) {
+        this.yingYuanAddress = yingYuanAddress;
     }
 }

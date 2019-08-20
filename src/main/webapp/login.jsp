@@ -117,8 +117,8 @@
 <span class="errow" style="color: red" ><%=errow %></span>
           <form action="login" class="login-form" name="userLoginForm" >
               <h1>Welcome</h1>
-              <p>用户名:<input type="text" name="customerName" id="userLoginName"><span id="t1"></span></p>
-              <p>密码:<input type="password" name="customerPassword" id="userPassWord"><span id="t2"></span></p>
+              <p>用户名:<input type="text" name="userLoginName" id="userLoginName"><span id="t1"></span></p>
+              <p>密码:<input type="password" name="userPassWord" id="userPassWord"><span id="t2"></span></p>
               <p>验证码:<input type="text" name="yzm"><img src="image.jsp" border="0" align="absmiddle"></p>
               <p><input type="submit" value="登录" class="login-btn"></p>
           </form>

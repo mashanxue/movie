@@ -1,23 +1,22 @@
 package com.movie.entity;
 
 public class Movies {
-    private int moviesId;
+    private Integer moviesId;
     private String movieName;
-    private double moviePrice;
+    private Double moviePrice;
     private String movieAddress;
-    private double movieScore;
-    private Integer movieTypeId;
+    private Double movieScore;
+    private String movieTypeId;
     private String movieTime;
     private String moviePname;
     private String movieAbstract;
     private String movieActor;
-    private Movietype movietype;
 
-    public int getMoviesId() {
+    public Integer getMoviesId() {
         return moviesId;
     }
 
-    public void setMoviesId(int moviesId) {
+    public void setMoviesId(Integer moviesId) {
         this.moviesId = moviesId;
     }
 
@@ -29,11 +28,11 @@ public class Movies {
         this.movieName = movieName;
     }
 
-    public double getMoviePrice() {
+    public Double getMoviePrice() {
         return moviePrice;
     }
 
-    public void setMoviePrice(double moviePrice) {
+    public void setMoviePrice(Double moviePrice) {
         this.moviePrice = moviePrice;
     }
 
@@ -45,19 +44,19 @@ public class Movies {
         this.movieAddress = movieAddress;
     }
 
-    public double getMovieScore() {
+    public Double getMovieScore() {
         return movieScore;
     }
 
-    public void setMovieScore(double movieScore) {
+    public void setMovieScore(Double movieScore) {
         this.movieScore = movieScore;
     }
 
-    public Integer getMovieTypeId() {
+    public String getmovieTypeId() {
         return movieTypeId;
     }
 
-    public void setMovieTypeId(Integer movieTypeId) {
+    public void setmovieTypeId(String movieTypeId) {
         this.movieTypeId = movieTypeId;
     }
 
@@ -91,30 +90,5 @@ public class Movies {
 
     public void setMovieActor(String movieActor) {
         this.movieActor = movieActor;
-    }
-
-    public Movietype getMovietype() {
-        return movietype;
-    }
-
-    public void setMovietype(Movietype movietype) {
-        this.movietype = movietype;
-    }
-
-    @Override
-    public String toString() {
-        return "Movies{" +
-                "moviesId=" + moviesId +
-                ", movieName='" + movieName + '\'' +
-                ", moviePrice=" + moviePrice +
-                ", movieAddress='" + movieAddress + '\'' +
-                ", movieScore=" + movieScore +
-                ", movieTypeId=" + movieTypeId +
-                ", movieTime='" + movieTime + '\'' +
-                ", moviePname='" + moviePname + '\'' +
-                ", movieAbstract='" + movieAbstract + '\'' +
-                ", movieActor='" + movieActor + '\'' +
-                ", movietype=" + movietype +
-                '}';
     }
 }

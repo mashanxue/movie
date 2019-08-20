@@ -1,0 +1,27 @@
+* { margin:0; padding:0; }
+.btn1{
+    width:60px;
+    height:40px;
+    background-color:#f47920;
+    border-radius: 50%;
+    border: 1px red solid;
+    display:inline-block;
+}
+input[type="submit"]{
+    color: #0C0C0C;
+    font-weight: 700;
+}
+
+input[type="submit"]:disabled {
+    color: #BEBFC3 !important;
+}
+/*#ttt tbody {*/
+/*    display: block;*/
+/*    height: 80px;*/
+/*    overflow-y: scroll;*/
+/*                }*/
+/*#ttt thead,#ttt tbody tr {*/
+/*    display: table;*/
+/*    width: 100%;*/
+/*    table-layout: fixed;*/
+/*                    }*/

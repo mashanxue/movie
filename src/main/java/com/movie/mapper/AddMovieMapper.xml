@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.movie.mapper.AddMovieMapper">
+    <insert id="addMovie" parameterType="com.movie.entity.Movies" useGeneratedKeys="true" keyProperty="moviesId">
+         insert into movies (movieName,moviePrice,movieAddress,movieScore,movieTypeId,movieTime,moviePname,movieAbstract,movieActor) values(#{movieName},#{moviePrice},#{movieAddress},#{movieScore},#{movieTypeId},#{movieTime},#{moviePname},#{movieAbstract},#{movieActor});
+    </insert>
+
+</mapper>

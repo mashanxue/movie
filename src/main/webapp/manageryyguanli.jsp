@@ -40,9 +40,9 @@
     </tr>
     <c:forEach var="list" items="${pageinfo.list}" >
         <tr class="warning">
-            <td ><h5>${list.yingyuanid}</h5></td>
-            <td><h5>${list.yingyuanname}</h5></td>
-            <td><h5>${list.yingyuanaddress}</h5></td>
+            <td ><h5>${list.yingYuanId}</h5></td>
+            <td><h5>${list.yingYuanName}</h5></td>
+            <td><h5>${list.yingYuanAddress}</h5></td>
         </tr>
     </c:forEach>
 
@@ -76,9 +76,9 @@
                         $("#tableyingyuan").append(
                             "<tr class='warning'>"+
 
-                            "<td ><h5>"+yingyuan[i].yingyuanid+"</h5></td>"+
-                            "<td><h5>"+yingyuan[i].yingyuanname+"</h5></td>"+
-                            "<td><h5>"+yingyuan[i].yingyuanaddress+"</h5></td>"+
+                            "<td ><h5>"+yingyuan[i].yingYuanId+"</h5></td>"+
+                            "<td><h5>"+yingyuan[i].yingYuanName+"</h5></td>"+
+                            "<td><h5>"+yingyuan[i].yingYuanAddress+"</h5></td>"+
                             "</tr>"
                         )}
                 }
@@ -108,9 +108,9 @@
                        $("#tableyingyuan").append(
                     "<tr class='warning'>"+
 
-                           "<td ><h5>"+PageInfo.list[i].yingyuanid+"</h5></td>"+
-                           "<td><h5>"+PageInfo.list[i].yingyuanname+"</h5></td>"+
-                       "<td><h5>"+PageInfo.list[i].yingyuanaddress+"</h5></td>"+
+                           "<td ><h5>"+PageInfo.list[i].yingYuanId+"</h5></td>"+
+                           "<td><h5>"+PageInfo.list[i].yingYuanName+"</h5></td>"+
+                       "<td><h5>"+PageInfo.list[i].yingYuanAddress+"</h5></td>"+
                     "</tr>"
                    )}
                 }

@@ -1,43 +1,40 @@
 package com.movie.entity;
 
 public class Changting {
-    private Integer changtingid;
+    private Integer changTingId;
+    private String changTingName;
+    private Integer changTingDX;
+    private Integer yuanId;
 
-    private String changtingname;
-
-    private Integer changtingdx;
-
-    public Changting(Integer changtingid, String changtingname, Integer changtingdx) {
-        this.changtingid = changtingid;
-        this.changtingname = changtingname;
-        this.changtingdx = changtingdx;
+    public Integer getChangTingId() {
+        return changTingId;
     }
 
-    public Changting() {
-        super();
+    public void setChangTingId(Integer changTingId) {
+        this.changTingId = changTingId;
     }
 
-    public Integer getChangtingid() {
-        return changtingid;
+    public String getChangTingName() {
+        return changTingName;
     }
 
-    public void setChangtingid(Integer changtingid) {
-        this.changtingid = changtingid;
+    public void setChangTingName(String changTingName) {
+        this.changTingName = changTingName;
     }
 
-    public String getChangtingname() {
-        return changtingname;
+    public Integer getChangTingDX() {
+        return changTingDX;
     }
 
-    public void setChangtingname(String changtingname) {
-        this.changtingname = changtingname == null ? null : changtingname.trim();
+    public void setChangTingDX(Integer changTingDX) {
+        this.changTingDX = changTingDX;
     }
 
-    public Integer getChangtingdx() {
-        return changtingdx;
+    public Integer getYuanId() {
+        return yuanId;
     }
 
-    public void setChangtingdx(Integer changtingdx) {
-        this.changtingdx = changtingdx;
+    public void setYuanId(Integer yuanId) {
+        this.yuanId = yuanId;
     }
 }

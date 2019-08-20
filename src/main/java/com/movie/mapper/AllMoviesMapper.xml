@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.movie.mapper.AllMoviesMapper">
+    <select id="allMovies" resultType="com.movie.entity.Movies">
+        select * from movies
+    </select>
+    <select id="allMoviesByType" resultType="com.movie.entity.Movies" parameterType="com.movie.entity.Movies">
+        select * from movies where movieTypeId=#{movieTypeId}
+    </select>
+    <select id="allMoviesByName" resultType="com.movie.entity.Movies" parameterType="com.movie.entity.Movies">
+        select * from movies where movieName=#{movieName}
+    </select>
+</mapper>
