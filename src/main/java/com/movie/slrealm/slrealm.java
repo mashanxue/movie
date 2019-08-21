@@ -28,6 +28,7 @@ public class slrealm extends AuthorizingRealm {
             simpleAuthorizationInfo.addStringPermission("add");
             simpleAuthorizationInfo.addStringPermission("delete");
             simpleAuthorizationInfo.addStringPermission("update");
+            simpleAuthorizationInfo.addStringPermission("shiromanager");
         }
         if("张三".equals(name)){
             String[] authority=(String[]) SecurityUtils.getSubject().getSession().getAttribute("authority");

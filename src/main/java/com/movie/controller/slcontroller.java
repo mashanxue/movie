@@ -133,9 +133,6 @@ public class slcontroller {
 
         if(authority==null){
             request.getSession().setAttribute("authority",null);
-            for(int i=0;i<authority.length;i++){
-                System.out.println("addshiro"+authority[i]);
-            }
         }else {
             request.getSession().setAttribute("authority",authority);
         }

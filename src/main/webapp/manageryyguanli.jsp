@@ -79,7 +79,12 @@
 <button class="btn-link pagebutton" title="${pageinfo.nextPage}">下一页</button>
 <button class="btn-link pagebutton" title="${pageinfo.pages}">尾页</button>
     </div>
+    <shiro:hasPermission name="shiromanager">
+    <a href="selectadmin?id=1">权限管理</a>
+    </shiro:hasPermission>
 </div>
+
+
 <script type="text/javascript">
 
     $(document).on("click",".insertbutton",function () {

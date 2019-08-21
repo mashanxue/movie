@@ -22,12 +22,14 @@
     <%----%>
 </head>
 <body style="background-color: #f1f4fd">
+<div class="container center-block " style="position:absolute;top:20%;right: -10%">
+    <h1>权限管理</h1>
 <form action="addshiro" >
-    <table>
+    <table class="table-bordered">
         <tr>
-            <th>管理员ID</th>
-            <th>管理员姓名</th>
-            <th>权限</th>
+            <th><h3>管理员ID</h3></th>
+            <th><h3>管理员姓名</h3></th>
+            <th><h3>权限</h3></th>
         </tr>
         <c:forEach items="${adminlist}" var="admin">
             <tr>
@@ -41,7 +43,7 @@
             </tr>
         </c:forEach>
     </table>
-<input type="submit" id="submit" value="提交">
+<input type="submit" id="submit" value="提交" class="btn-success">
 </form>
-
+</div>
 </body></html>
