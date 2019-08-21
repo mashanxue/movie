@@ -9,6 +9,8 @@ public class Admin implements Serializable{
 
     private String adminpassword;
 
+    private Integer yingyuan;
+
     public Admin(Integer adminid, String adminname, String adminpassword) {
         this.adminid = adminid;
         this.adminname = adminname;
@@ -19,6 +21,15 @@ public class Admin implements Serializable{
     public Admin() {
         super();
     }
+
+    public Integer getYingyuan() {
+        return yingyuan;
+    }
+
+    public void setYingyuan(Integer yingyuan) {
+        this.yingyuan = yingyuan;
+    }
+
 
     public Integer getAdminid() {
         return adminid;

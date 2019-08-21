@@ -2,6 +2,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 		 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -35,7 +36,11 @@
       
       <a class="avatar" href="managerindex.jsp">
         <img src="res/images/8.jpg">
-        <cite style="color: white;">管理员</cite>
+        <cite style="color: white;">管理员：${sessionScope.adminmanager}
+			<c:if test="${sessionScope.adminmanager!='李四'}">
+			电影院：${sessionScope.sladminyingyuan}
+			</c:if>
+		</cite>&nbsp;&nbsp;
 		  <a href="managerlogin.jsp"><i style="color: white;">退出</i></a>
       </a>
       <div class="nav">
@@ -80,7 +85,7 @@
 	</div>
 	<script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
 	<script type="text/javascript" src="myplugs/js/plugs.js" ></script>
-[<script>
+<script>
 		layui.use('element', function() {
 			var element = layui.element();
 		});

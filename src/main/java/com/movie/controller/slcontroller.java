@@ -20,6 +20,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import java.io.Serializable;
 import java.util.List;
 
 @Controller
@@ -43,7 +44,6 @@ public class slcontroller {
     }catch (IncorrectCredentialsException e){
         System.out.println("mimacuowu");
     }
-
 
 
         return "managerindex";
@@ -70,6 +70,8 @@ public class slcontroller {
         PageInfo<Yingyuan> pageInfo=new PageInfo(list);
 
         model.addAttribute("pageinfo",pageInfo);
+        List<Yingyuan> listtwo=adminservice.findallyingyuan();
+        model.addAttribute("listtwo",listtwo);
         return "manageryyguanli";
     }
     @RequestMapping("findallyingyuanajax")
@@ -141,6 +143,20 @@ public class slcontroller {
 
 
         return findallyingyuan(null, model);
+    }
+
+    @RequestMapping("/insertadmin")
+    public String insertadmin(Admin admin, Model model){
+        if(admin!=null){
+            adminservice.addadmin(admin);
+        }
+
+           return findallyingyuan(null, model);
+    }
+    @RequestMapping("/addadminuser")
+    public String addadmin( Model model){
+       model.addAttribute("yingyuanlist",adminservice.findallyingyuan()) ;
+        return "addadmin";
     }
 
 }

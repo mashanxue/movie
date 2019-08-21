@@ -33,12 +33,12 @@
         </tr>
         <c:forEach items="${adminlist}" var="admin">
             <tr>
-                <td><input type="text" value="${admin.adminid}" style="border: 0px" disabled name="adminid"> </td>
-                <td><input type="text" value="${admin.adminname}" style="border: 0px" disabled></td>
+                <td><h4><input type="text" value="${admin.adminid}" style="border: 0px" disabled name="adminid"></h4> </td>
+                <td><h4><input type="text" value="${admin.adminname}" style="border: 0px" disabled></h4></td>
                 <td>
-                   添加： <input type="checkbox" name="authority" value="add">
+                    <h4>添加： <input type="checkbox" name="authority" value="add">
                     删除： <input type="checkbox" name="authority" value="delete">
-                    修改： <input type="checkbox" name="authority" value="update">
+                    修改： <input type="checkbox" name="authority" value="update"></h4>
                 </td>
             </tr>
         </c:forEach>

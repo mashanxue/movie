@@ -7,7 +7,7 @@ import com.movie.entity.Yingyuan;
 import java.util.List;
 
 public interface Adminservice {
-    public String adminlogin (Admin admin);
+    public Admin adminlogin (Admin admin);
     public List<Movies> selectallmovie();
 
     public List<Yingyuan> findallyingyuan();
@@ -21,4 +21,6 @@ public interface Adminservice {
     public Integer deleteyingyuan(Integer id);
 
     public List<Admin> selectadmin(Integer id);
+
+    public Integer addadmin(Admin admin);
 }

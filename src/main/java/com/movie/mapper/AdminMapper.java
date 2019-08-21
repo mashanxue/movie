@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public interface AdminMapper {
 
-    public String adminlogin (Admin admin);
+    public Admin adminlogin (Admin admin);
 
     public List<Movies>  selectallmovie();
 
@@ -28,4 +28,6 @@ public interface AdminMapper {
     public Integer deleteyingyuan(Integer id);
 
     public List<Admin> selectadmin(@Param("id") Integer id);
+
+    public Integer addadmin(Admin admin);
 }

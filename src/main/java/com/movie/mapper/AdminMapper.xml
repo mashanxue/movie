@@ -4,8 +4,8 @@
 <mapper namespace="com.movie.mapper.AdminMapper">
     <!-- //查所有
     public List<Customer> findAll();-->
-    <select id="adminlogin" resultType="string" parameterType="Admin">
-        select adminpassword from admin where adminname=#{adminname}
+    <select id="adminlogin" resultType="Admin" parameterType="Admin">
+        select * from admin where  adminname=#{adminname}
     </select>
    <select id="selectallmovie" resultType="Movies" >
     SELECT * FROM movies
@@ -51,9 +51,11 @@
         select * from admin
         <where>
             <if test="id!=null and id!=''">
-                adminid=#{id}
+              and  yingyuan=#{id}
             </if>
         </where>
     </select>
-
+    <insert id="addadmin" >
+        insert into admin(adminname,adminpassword,yingyuan) values (#{adminname},#{adminpassword},#{yingyuan})
+    </insert>
 </mapper>

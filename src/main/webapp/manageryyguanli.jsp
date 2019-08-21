@@ -6,7 +6,7 @@
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<html >
 <head>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -22,7 +22,7 @@
     <%----%>
 </head>
 <body style="background-color: #f1f4fd">
-<div class="container" style="margin-left: 300px" >
+<div class="container" <%--style="margin-left: 300px"--%> >
 <h1 class="page-header">影院管理</h1>
 
 <div class="form-group" >
@@ -31,7 +31,7 @@
         &nbsp;  &nbsp; &nbsp;影院地址：<input type="text" name="yingYuanAddress"  >
         <input type="button" value="查询" class="btn-link selectbutton">
     </form>
-    <shiro:hasPermission name="add,delete">
+    <shiro:hasPermission name="add">
     <button class="btn-link insertbutton" >添加影院</button>
     </shiro:hasPermission>
 </div>
@@ -80,12 +80,29 @@
 <button class="btn-link pagebutton" title="${pageinfo.pages}">尾页</button>
     </div>
     <shiro:hasPermission name="shiromanager">
-    <a href="selectadmin?id=1">权限管理</a>
+        <button class="btn-link" onclick="x()">权限管理</button>
     </shiro:hasPermission>
+    <shiro:hasPermission name="shiromanager">
+        <a href="addadminuser">增加管理员</a>
+    </shiro:hasPermission>
+    <div id="selectadmindiv" hidden>
+        <form action="selectadmin" >
+            请选择需要赋予权限的电影院管理员：<br/>
+            <select name="id">
+                <c:forEach var="list" items="${listtwo}" >
+                    <option value="${list.yingYuanId}">${list.yingYuanName}:${list.yingYuanAddress}</option>
+                </c:forEach>
+            </select>
+            <input type="submit" class="btn-link ">
+        </form>
+    </div>
 </div>
 
 
 <script type="text/javascript">
+    function x(){
+        $("#selectadmindiv").attr("hidden",false)
+    }
 
     $(document).on("click",".insertbutton",function () {
         $("#upordeformbutton").attr("class","insertformbutton")

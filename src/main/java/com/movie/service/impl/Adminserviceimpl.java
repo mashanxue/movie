@@ -16,7 +16,7 @@ public class Adminserviceimpl implements Adminservice {
     AdminMapper adminMapper;
 
     @Override
-    public String adminlogin(Admin admin) {
+    public Admin adminlogin(Admin admin) {
         return adminMapper.adminlogin(admin);
 
     }
@@ -45,5 +45,9 @@ public class Adminserviceimpl implements Adminservice {
     }
     public List<Admin> selectadmin(Integer id){
         return adminMapper.selectadmin(id);
+    }
+
+    public Integer addadmin(Admin admin){
+        return adminMapper.addadmin(admin);
     }
 }
