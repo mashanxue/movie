@@ -88,7 +88,32 @@ public class slcontroller {
     @RequestMapping("/specialfind")
     @ResponseBody
     public List<Yingyuan> specialfind(Yingyuan yingyuan){
+
+        System.out.println(adminservice.findspecialyingyuan(yingyuan));
         return adminservice.findspecialyingyuan(yingyuan);
+    }
+
+    @RequestMapping("/insertyingyuan")
+
+    public String insertyingyuan(Yingyuan yingyuan,Model model){
+
+        adminservice.insertyingyuan(yingyuan);
+        return findallyingyuan(null,model);
+    }
+
+    @RequestMapping("/deleteyingyuan")
+
+    public String deleteyingyuan(Integer id,Model model){
+         adminservice.deleteyingyuan(id);
+        return findallyingyuan(null, model);
+    }
+
+    @RequestMapping("/updateyingyuan")
+
+    public String updateyingyuan(Yingyuan yingyuan,Model model){
+        System.out.println(yingyuan);
+         adminservice.updateyingyuan(yingyuan);
+        return findallyingyuan(null, model);
     }
 
 }

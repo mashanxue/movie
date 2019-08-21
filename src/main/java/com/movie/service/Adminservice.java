@@ -13,4 +13,10 @@ public interface Adminservice {
     public List<Yingyuan> findallyingyuan();
 
     public List<Yingyuan> findspecialyingyuan(Yingyuan yingyuan);
+
+    public Integer updateyingyuan(Yingyuan yingyuan);
+
+    public Integer insertyingyuan(Yingyuan yingyuan);
+
+    public Integer deleteyingyuan(int id);
 }

@@ -4,6 +4,7 @@ import com.movie.entity.Admin;
 import com.movie.service.Adminservice;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,13 @@ public class slrealm extends AuthorizingRealm {
     Adminservice adminservice;
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
-
-        return null;
+        String name= (String) principalCollection.getPrimaryPrincipal();
+        System.out.println(name+"AuthorizationInfo");
+        SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
+        if("李四".equals(name)){
+            simpleAuthorizationInfo.addRole("superadmin");
+        }
+        return simpleAuthorizationInfo;
     }
 
     @Override
@@ -28,6 +34,6 @@ public class slrealm extends AuthorizingRealm {
             if(password==null){
                 return null;
             }
-        return new  SimpleAuthenticationInfo("",password,"");
+        return new  SimpleAuthenticationInfo(admin.getAdminname(),password,"");
     }
 }

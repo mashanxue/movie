@@ -16,12 +16,34 @@
     <select id="findspecialyingyuan" resultType="Yingyuan">
         select * from yingyuan
         <where>
-            <if test="yingyuanname!=null and yingyuanname!=''">
-                yingyuanname=#{yingyuanname}
+            <if test="yingYuanId!=null and yingYuanId!=''">
+                yingYuanId=#{yingYuanId}
             </if>
-            <if test="yingyuanaddress!=null and yingyuanaddress!=''">
-              and  yingyuanaddress=#{yingyuanaddress}
+            <if test="yingYuanName!=null and yingYuanName!=''">
+             and   yingyuanname=#{yingYuanName}
+            </if>
+            <if test="yingYuanAddress!=null and yingYuanAddress!=''">
+              and  yingyuanaddress=#{yingYuanAddress}
             </if>
         </where>
     </select>
+    <update id="updateyingyuan" >
+        update yingyuan
+        <set>
+            <if test="yingYuanName!=null and yingYuanName!=''">
+                yingyuanname=#{yingYuanName},
+            </if>
+            <if test="yingYuanAddress!=null and yingYuanAddress!=''">
+                yingYuanAddress=#{yingYuanAddress},
+            </if>
+        </set>
+        where yingYuanId=#{yingYuanId}
+    </update>
+    <insert id="insertyingyuan">
+        insert into yingyuan(yingyuanname,yingYuanAddress) values (#{yingYuanName},#{yingYuanAddress})
+
+    </insert>
+    <delete id="deleteyingyuan">
+        delete from yingyuan where yingYuanId=#{yingYuanId}
+    </delete>
 </mapper>

@@ -3,6 +3,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -26,10 +27,12 @@
 
 <div class="form-group" >
     <form  class="form-horizontal yingyuanform">
-        影院名：<input type="text" name="yingyuanname" >
-        &nbsp;  &nbsp; &nbsp;影院地址：<input type="text" name="yingyuanaddress"  >
+        影院名：<input type="text" name="yingYuanName" >
+        &nbsp;  &nbsp; &nbsp;影院地址：<input type="text" name="yingYuanAddress"  >
         <input type="button" value="查询" class="btn-link selectbutton">
     </form>
+
+    <button class="btn-link insertbutton" >添加影院</button>
 </div>
     <div class="center-block" >
 <table class="table-striped table-hover" id="tableyingyuan">
@@ -37,25 +40,112 @@
         <td><h3 style="margin-right: 100px">影院编号</h3></td>
         <td><h3 style="margin-right: 100px">影院名字</h3></td>
         <td><h3 style="margin-right: 100px">影院地址</h3></td>
+        <shiro:hasRole name="superadmin">
+            <td><h3 style="margin-right: 100px">影院管理</h3></td>
+        </shiro:hasRole>
+
     </tr>
     <c:forEach var="list" items="${pageinfo.list}" >
-        <tr class="warning">
+        <tr class="warning" >
             <td ><h5>${list.yingYuanId}</h5></td>
             <td><h5>${list.yingYuanName}</h5></td>
             <td><h5>${list.yingYuanAddress}</h5></td>
-        </tr>
+            <shiro:hasRole name="superadmin">
+                <td> <input type="button" value="删除" title="${list.yingYuanId}" class="btn-link deletebutton">
+                    <input type="button" value="修改" title="${list.yingYuanName}"  class="btn-link updatebutton"> </td>
+
+            </shiro:hasRole>
+       </tr>
     </c:forEach>
 
 </table>
+            <div id="upordeformdiv" hidden>
+            <form id="upordeform" class="form-horizontal " >
+                影院名字：<input type="text" name="yingYuanName" id="upordeformname" placeholder="">
+                影院地址：<input type="text" name="yingYuanAddress" id="upordeformaddress">
+                <input type="hidden" name="yingYuanId" id="upordeforId" >
+                <input type="button" id="upordeformbutton" value="提交">
+            </form>
+            </div>
+
     </div>
     <div style="margin-left: 300px;margin-top: 20px">
-<button class="btn-link" title="1" >首页</button>
-<button class="btn-link" title="${pageinfo.prePage}">上一页</button>
-<button class="btn-link" title="${pageinfo.nextPage}">下一页</button>
-<button class="btn-link" title="${pageinfo.pages}">尾页</button>
+<button class="btn-link pagebutton" title="1" >首页</button>
+<button class="btn-link pagebutton" title="${pageinfo.prePage}">上一页</button>
+<button class="btn-link pagebutton" title="${pageinfo.nextPage}">下一页</button>
+<button class="btn-link pagebutton" title="${pageinfo.pages}">尾页</button>
     </div>
 </div>
 <script type="text/javascript">
+
+    $(document).on("click",".insertbutton",function () {
+        $("#upordeformbutton").attr("class","insertformbutton")
+        $("#upordeformdiv").attr('hidden',false)
+    })
+    $(document).on("click",".updatebutton",function (){
+    var yingyuanname=$(this).attr("title")
+
+        $.ajax({
+            type:"get",
+            url:"specialfind",
+            data:{yingYuanName:yingyuanname,yingYuanAddress:null},
+            success:function (yingyuan) {
+                console.log(yingyuan)
+                $("#upordeformname").val(yingyuan[0].yingYuanName)
+                $("#upordeformaddress").val(yingyuan[0].yingYuanAddress)
+                $("#upordeforId").val(yingyuan[0].yingYuanId)
+            }})
+
+
+
+        $("#upordeformbutton").attr("class","updateformbutton")
+        $("#upordeformdiv").attr('hidden',false)
+    })
+    $(document).on("click",".deletebutton",function (){
+      var re=confirm("请问是否确认要删除");
+
+      if(re==false){
+          return false
+      }else {
+
+              var id=$(this).attr("title")
+              window.location.href="deleteyingyuan?id="+id
+      }
+
+    })
+    $(document).on("click",".updateformbutton",function () {
+        if($("#upordeformname").val()=="" || $("#upordeformname").val()==null) {
+
+            $("#upordeformname").attr("placeholder","电影名不可为空")
+            return false
+        }
+        if($("#upordeformaddress").val()==null || $("#upordeformaddress").val()=="") {
+
+            $("#upordeformaddress").attr("placeholder","地址不可为空")
+            return false
+        }
+        window.location.href="updateyingyuan?yingYuanId="+$("#upordeforId").val()+"&yingYuanName="+ $("#upordeformname").val()+"&yingYuanAddress="+
+            $("#upordeformaddress").val()
+        $("#upordeformdiv").attr('hidden')
+    })
+    $(document).on("click",".insertformbutton",function () {
+        if($("#upordeformname").val()=="" || $("#upordeformname").val()==null) {
+
+            $("#upordeformname").attr("placeholder","电影名不可为空")
+            return false
+        }
+        if($("#upordeformaddress").val()==null || $("#upordeformaddress").val()=="") {
+
+            $("#upordeformaddress").attr("placeholder","地址不可为空")
+            return false
+        }
+        window.location.href="insertyingyuan?yingYuanName="+ $("#upordeformname").val()+"&yingYuanAddress="+
+            $("#upordeformaddress").val()
+        $("#upordeformdiv").attr('hidden')
+    })
+
+
+
     $(".selectbutton").click(function () {
         var yingyuan=$(".yingyuanform").serialize();
         yingyuan=decodeURIComponent(yingyuan,true);
@@ -70,6 +160,9 @@
                         "<td><h3 style=\"margin-right: 100px\">影院编号</h3></td>"+
                         "<td><h3 style=\"margin-right: 100px\">影院名字</h3></td>"+
                         "<td><h3 style=\"margin-right: 100px\">影院地址</h3></td>"+
+                            "<shiro:hasRole name='superadmin'>"+
+                            "  <td><h3 style=\"margin-right: 100px\">影院管理</h3></td>"+
+                              "</shiro:hasRole>"+
                         "</tr>")
 
                     for(var i=0;i<yingyuan.length;i++){
@@ -79,6 +172,12 @@
                             "<td ><h5>"+yingyuan[i].yingYuanId+"</h5></td>"+
                             "<td><h5>"+yingyuan[i].yingYuanName+"</h5></td>"+
                             "<td><h5>"+yingyuan[i].yingYuanAddress+"</h5></td>"+
+                            "<shiro:hasRole name='superadmin'>"+
+                            "<td> <input type='button' value='删除' title='"+yingyuan[i].yingYuanId+"' class='btn-link deletebutton'>"+
+                            "<input type='button' value='修改' class='btn-link updatebutton'> </td>"+
+                            "</shiro:hasRole>"+
+
+
                             "</tr>"
                         )}
                 }
@@ -86,14 +185,14 @@
     })
 
 
-    $("button").click(function () {
+    $(".pagebutton").click(function () {
 
         var pageNo=$(this).attr("title")
         console.log(pageNo)
             $.ajax({
                 type:"post",
                 url:"findallyingyuanajax",
-                data:{"pageNo":pageNo},
+                data:{pageNo:pageNo},
                 success:function (PageInfo) {
 
                     $("#tableyingyuan").empty();
@@ -102,7 +201,12 @@
                      "<td><h3 style=\"margin-right: 100px\">影院编号</h3></td>"+
                         "<td><h3 style=\"margin-right: 100px\">影院名字</h3></td>"+
                     "<td><h3 style=\"margin-right: 100px\">影院地址</h3></td>"+
+                        "<shiro:hasRole name='superadmin'>"+
+                        "  <td><h3 style=\"margin-right: 100px\">影院管理</h3></td>"+
+                        "</shiro:hasRole>"+
+
                     "</tr>")
+
 
                    for(var i=0;i<PageInfo.list.length;i++){
                        $("#tableyingyuan").append(
@@ -111,7 +215,12 @@
                            "<td ><h5>"+PageInfo.list[i].yingYuanId+"</h5></td>"+
                            "<td><h5>"+PageInfo.list[i].yingYuanName+"</h5></td>"+
                        "<td><h5>"+PageInfo.list[i].yingYuanAddress+"</h5></td>"+
-                    "</tr>"
+
+                           "<shiro:hasRole name='superadmin'>"+
+                           "<td> <input type='button' value='删除' title='"+PageInfo.list[i].yingYuanId+"' class='btn-link deletebutton'>"+
+                           "<input type='button' value='修改' class='btn-link updatebutton'> </td>"+
+                           "</shiro:hasRole>"+
+                       "</tr>"
                    )}
                 }
             })

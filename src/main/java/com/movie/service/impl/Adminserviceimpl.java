@@ -31,4 +31,17 @@ public class Adminserviceimpl implements Adminservice {
     public List<Yingyuan> findspecialyingyuan(Yingyuan yingyuan){
         return adminMapper.findspecialyingyuan(yingyuan);
     }
+
+    public Integer updateyingyuan(Yingyuan yingyuan){
+        return adminMapper.updateyingyuan(yingyuan);
+    }
+
+    public Integer insertyingyuan(Yingyuan yingyuan){
+        return adminMapper.insertyingyuan(yingyuan);
+    }
+
+    public Integer deleteyingyuan(int id){
+        return adminMapper.deleteyingyuan(id);
+    }
+
 }
