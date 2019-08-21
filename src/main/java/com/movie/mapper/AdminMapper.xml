@@ -46,4 +46,14 @@
     <delete id="deleteyingyuan">
         delete from yingyuan where yingYuanId=#{yingYuanId}
     </delete>
+
+    <select id="selectadmin" resultType="Admin">
+        select * from admin
+        <where>
+            <if test="id!=null and id!=''">
+                adminid=#{id}
+            </if>
+        </where>
+    </select>
+
 </mapper>

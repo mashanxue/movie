@@ -31,8 +31,9 @@
         &nbsp;  &nbsp; &nbsp;影院地址：<input type="text" name="yingYuanAddress"  >
         <input type="button" value="查询" class="btn-link selectbutton">
     </form>
-
+    <shiro:hasPermission name="add,delete">
     <button class="btn-link insertbutton" >添加影院</button>
+    </shiro:hasPermission>
 </div>
     <div class="center-block" >
 <table class="table-striped table-hover" id="tableyingyuan">
@@ -51,9 +52,12 @@
             <td><h5>${list.yingYuanName}</h5></td>
             <td><h5>${list.yingYuanAddress}</h5></td>
             <shiro:hasRole name="superadmin">
-                <td> <input type="button" value="删除" title="${list.yingYuanId}" class="btn-link deletebutton">
+                <td> <shiro:hasPermission name="delete">
+                    <input type="button" value="删除" title="${list.yingYuanId}" class="btn-link deletebutton">
+                    </shiro:hasPermission>
+                    <shiro:hasPermission name="update">
                     <input type="button" value="修改" title="${list.yingYuanName}"  class="btn-link updatebutton"> </td>
-
+                    </shiro:hasPermission>
             </shiro:hasRole>
        </tr>
     </c:forEach>
@@ -173,11 +177,15 @@
                             "<td><h5>"+yingyuan[i].yingYuanName+"</h5></td>"+
                             "<td><h5>"+yingyuan[i].yingYuanAddress+"</h5></td>"+
                             "<shiro:hasRole name='superadmin'>"+
-                            "<td> <input type='button' value='删除' title='"+yingyuan[i].yingYuanId+"' class='btn-link deletebutton'>"+
-                            "<input type='button' value='修改' class='btn-link updatebutton'> </td>"+
+                            "<td> " +
+                                "<shiro:hasPermission name='delete'>"+
+                            "<input type='button' value='删除' title='"+yingyuan[i].yingYuanId+"' class='btn-link deletebutton'>"+
+                                "</shiro:hasPermission>"+
+                            "<shiro:hasPermission name='update'>"+
+                            "<input type='button' value='修改' title='"+yingyuan[i].yingYuanId+"' class='btn-link updatebutton'>"+
+                            "</shiro:hasPermission>"+
+                           "</td>"+
                             "</shiro:hasRole>"+
-
-
                             "</tr>"
                         )}
                 }
@@ -215,11 +223,16 @@
                            "<td ><h5>"+PageInfo.list[i].yingYuanId+"</h5></td>"+
                            "<td><h5>"+PageInfo.list[i].yingYuanName+"</h5></td>"+
                        "<td><h5>"+PageInfo.list[i].yingYuanAddress+"</h5></td>"+
-
-                           "<shiro:hasRole name='superadmin'>"+
-                           "<td> <input type='button' value='删除' title='"+PageInfo.list[i].yingYuanId+"' class='btn-link deletebutton'>"+
-                           "<input type='button' value='修改' class='btn-link updatebutton'> </td>"+
-                           "</shiro:hasRole>"+
+                       "<shiro:hasRole name='superadmin'>"+
+                       "<td> " +
+                       "<shiro:hasPermission name='delete'>"+
+                       "<input type='button' value='删除' title='"+PageInfo.list[i].yingYuanId+"' class='btn-link deletebutton'>"+
+                       "</shiro:hasPermission>"+
+                       "<shiro:hasPermission name='update'>"+
+                       "<input type='button' value='修改' title='"+PageInfo.list[i].yingYuanId+"' class='btn-link updatebutton'>" +
+                           "</shiro:hasPermission>"+
+                           " </td>"+
+                       "</shiro:hasRole>"+
                        "</tr>"
                    )}
                 }

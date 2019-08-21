@@ -18,5 +18,7 @@ public interface Adminservice {
 
     public Integer insertyingyuan(Yingyuan yingyuan);
 
-    public Integer deleteyingyuan(int id);
+    public Integer deleteyingyuan(Integer id);
+
+    public List<Admin> selectadmin(Integer id);
 }

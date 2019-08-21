@@ -4,6 +4,7 @@ import com.movie.entity.Admin;
 import com.movie.entity.Movies;
 import com.movie.entity.Yingyuan;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -24,5 +25,7 @@ public interface AdminMapper {
 
     public Integer insertyingyuan(Yingyuan yingyuan);
 
-    public Integer deleteyingyuan(int id);
+    public Integer deleteyingyuan(Integer id);
+
+    public List<Admin> selectadmin(@Param("id") Integer id);
 }

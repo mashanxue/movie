@@ -40,8 +40,10 @@ public class Adminserviceimpl implements Adminservice {
         return adminMapper.insertyingyuan(yingyuan);
     }
 
-    public Integer deleteyingyuan(int id){
+    public Integer deleteyingyuan(Integer id){
         return adminMapper.deleteyingyuan(id);
     }
-
+    public List<Admin> selectadmin(Integer id){
+        return adminMapper.selectadmin(id);
+    }
 }
