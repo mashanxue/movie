@@ -58,7 +58,7 @@
 					
 								<li class="layui-nav-item "><a href="/findallyingyuan" target="right"> <i
 					class="layui-icon">&#xe612;</i>影院管理</a></li>
-			<li class="layui-nav-item "><a href="allMovies" target="right"> <i
+			<li class="layui-nav-item "><a href="allMovies?" target="right"> <i
 					class="layui-icon">&#xe612;</i> 电影管理</a></li>
 			<li class="layui-nav-item "><a href="addmovie.jsp" target="right"> <i
 					class="layui-icon">&#xe612;</i> 添加电影</a></li>

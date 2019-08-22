@@ -18,7 +18,9 @@
     <%----%>
 </head>
 <body style="background-color: #f1f4fd">
-    <form action="insertadmin">
+<div class="container" style="position: absolute;top: 20%">
+    <form action="insertadmin " >
+        <h1 class="lead">增加管理员</h1>
         管理员姓名：<input type="text"  name="adminname">
         管理员密码：<input type="password" name="adminpassword">
         <select name="yingyuan">
@@ -28,6 +30,6 @@
         </select>
         <input type="submit" value="提交" class="btn-success">
     </form>
-
+</div>
 </body>
 </html>

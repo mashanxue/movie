@@ -12,7 +12,7 @@
 <link href="css/main.css" rel="stylesheet" type="text/css" />
 
 </head>
-<body>
+<body style="background-color: #0a628f">
 
 
 <div class="login">
